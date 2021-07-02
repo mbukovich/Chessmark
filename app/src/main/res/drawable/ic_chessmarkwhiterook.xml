@@ -1,0 +1,56 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path
+        android:fillColor="#fff"
+        android:strokeColor="#000"
+        android:strokeWidth="1"
+        android:strokeMiterLimit="100"
+        android:name="Ellipse 3"
+        android:pathData="m75 75c13.81 0 25 11.19 25 25c0 13.81 -11.19 25 -25 25c-13.81 0 -25 -11.19 -25 -25c0 -13.81 11.19 -25 25 -25z" />
+    <path
+        android:fillColor="#fff"
+        android:strokeColor="#000"
+        android:strokeWidth="1"
+        android:strokeMiterLimit="100"
+        android:name="Ellipse 2"
+        android:pathData="m25 75c13.81 0 25 11.19 25 25c0 13.81 -11.19 25 -25 25c-13.81 0 -25 -11.19 -25 -25c0 -13.81 11.19 -25 25 -25z" />
+    <path
+        android:fillColor="#fff"
+        android:name="Rectangle 1"
+        android:pathData="m25 75h50v25h-50v-25z" />
+    <path
+        android:fillColor="#fff"
+        android:strokeColor="#000"
+        android:strokeWidth="1"
+        android:strokeMiterLimit="100"
+        android:name="Triangle 1"
+        android:pathData="m37.51 75.01 -25.5 -25 51 -0.01 -25.5 25z" />
+    <path
+        android:fillColor="#fff"
+        android:strokeColor="#000"
+        android:strokeWidth="1"
+        android:strokeMiterLimit="100"
+        android:name="Triangle 2"
+        android:pathData="m62.5 75 -25.5 -25 51 -0 -25.5 25z" />
+    <path
+        android:fillColor="#fff"
+        android:strokeColor="#000"
+        android:strokeWidth="1"
+        android:strokeMiterLimit="100"
+        android:name="Rectangle 6"
+        android:pathData="m25 63h50v12h-50v-12z" />
+    <path
+        android:fillColor="#fff"
+        android:name="Rectangle 7"
+        android:pathData="m25 50h50v13h-50v-13z" />
+    <path
+        android:fillColor="#fff"
+        android:strokeColor="#000"
+        android:strokeWidth="1"
+        android:strokeMiterLimit="100"
+        android:name="Rectangle 5"
+        android:pathData="m13 0c0 0 7.59 0 12 0c0 2.61 0 21.99 0 25c1.69 0 10.14 0 13 0c-0.13 -2.67 -0.5 -19.48 0 -25c3.48 0 18.05 0.37 25 0c-0.5 10.33 -0.5 13.5 0 25c4.72 0 8.59 -0.14 12 0c0 -9.59 0 -16.69 0 -25c9.87 0 13 0 13 0v52h-75v-52z" />
+</vector>

@@ -1,0 +1,56 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path
+        android:fillColor="#fff"
+        android:strokeColor="#000"
+        android:strokeWidth="1"
+        android:strokeMiterLimit="100"
+        android:name="Ellipse 3"
+        android:pathData="m75 75c13.81 0 25 11.19 25 25c0 13.81 -11.19 25 -25 25c-13.81 0 -25 -11.19 -25 -25c0 -13.81 11.19 -25 25 -25z" />
+    <path
+        android:fillColor="#fff"
+        android:strokeColor="#000"
+        android:strokeWidth="1"
+        android:strokeMiterLimit="100"
+        android:name="Ellipse 2"
+        android:pathData="m25 75c13.81 0 25 11.19 25 25c0 13.81 -11.19 25 -25 25c-13.81 0 -25 -11.19 -25 -25c0 -13.81 11.19 -25 25 -25z" />
+    <path
+        android:fillColor="#fff"
+        android:name="Rectangle 1"
+        android:pathData="m25 75h50v25h-50v-25z" />
+    <path
+        android:fillColor="#fff"
+        android:strokeColor="#000"
+        android:strokeWidth="2"
+        android:strokeMiterLimit="100"
+        android:name="Triangle 1"
+        android:pathData="m50 0 25 75 -50 0 25 -75z" />
+    <path
+        android:fillColor="#fff"
+        android:strokeColor="#000"
+        android:strokeWidth="1.22"
+        android:strokeMiterLimit="100"
+        android:name="Ellipse 1"
+        android:pathData="m50 0c13.81 0 25 11.19 25 25c0 13.81 -11.19 25 -25 25c-13.81 0 -25 -11.19 -25 -25c0 -13.81 11.19 -25 25 -25z" />
+    <path
+        android:fillColor="#fff"
+        android:name="Triangle 2"
+        android:pathData="m50 0 25 75 -50 0 25 -75z" />
+    <path
+        android:fillColor="#000"
+        android:strokeColor="#000"
+        android:strokeWidth="1"
+        android:strokeMiterLimit="100"
+        android:name="Line 1"
+        android:pathData="m36 45v-1h28v1h-28z" />
+    <path
+        android:fillColor="#000"
+        android:strokeColor="#000"
+        android:strokeWidth="1"
+        android:strokeMiterLimit="100"
+        android:name="Line 2"
+        android:pathData="m0 100v-1h100v1h-100z" />
+</vector>

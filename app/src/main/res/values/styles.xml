@@ -1,10 +1,41 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="tabStyle">@style/chessmark_tab_layout</item>
+        <item name="toolbarStyle">@style/chessmark_toolbar</item>
+        <item name="appBarLayoutStyle">@style/chessmark_appBar</item>
+        <item name="materialCardViewStyle">@style/chessmark_cardview</item>
+    </style>
+
+    <style name="chessmark_appBar" parent="Widget.MaterialComponents.AppBarLayout.Primary">
+        <!-- Customize AppBarLayout styling here -->
+    </style>
+
+    <style name="chessmark_toolbar" parent="@style/Widget.MaterialComponents.Toolbar.Primary">
+        <!-- Customize toolbar styling here -->
+    </style>
+
+    <style name="chessmark_tab_layout" parent="Widget.MaterialComponents.TabLayout">
+        <!-- Customize TabLayout styling here -->
+    </style>
+
+    <style name="chessmark_cardview" parent="@style/Widget.MaterialComponents.CardView">
+        <!-- Customize card view styling here -->
+        <item name="cardBackgroundColor">@color/colorAltBackground</item>
+    </style>
+
+    <style name="chessmark_text_title" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+        <!-- Customize title text styling here -->
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="chessmark_text_label">
+        <!-- Customize text labels here -->
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

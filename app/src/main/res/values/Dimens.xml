@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- standard dimensions -->
+    <dimen name="chessmark_corner_radius">20dp</dimen>
+    <dimen name="card_view_margin">10dp</dimen>
+    <dimen name="card_view_margin_top">20dp</dimen>
+    <dimen name="card_view_margin_bottom">0dp</dimen>
+    <dimen name="card_view_sub_point_left_margin">50dp</dimen>
+    <dimen name="card_view_text_margin">10dp</dimen>
+    <dimen name="card_view_text_margin_side">20dp</dimen>
+
+    <dimen name="text_chapter_title_margin">10dp</dimen>
+    <dimen name="text_chapter_title_margin_top">20dp</dimen>
+    <dimen name="text_chapter_title_margin_bottom">0dp</dimen>
+
+    <dimen name="board_layout_margin">15dp</dimen>
+</resources>

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.DetailsEditorFragment"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_details_chapter_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chapter 1: Center Importance"
+            style="@style/chessmark_text_title"
+            android:layout_marginTop="@dimen/text_chapter_title_margin_top"
+            android:layout_marginBottom="@dimen/text_chapter_title_margin_bottom"
+            android:layout_marginRight="@dimen/text_chapter_title_margin"
+            android:layout_marginLeft="@dimen/text_chapter_title_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/card_subtitle"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_view_margin_top"
+            android:layout_marginBottom="@dimen/card_view_margin_bottom"
+            android:layout_marginLeft="@dimen/card_view_margin"
+            android:layout_marginRight="@dimen/card_view_margin"
+            app:cardCornerRadius="@dimen/chessmark_corner_radius"
+            app:layout_constraintTop_toBottomOf="@id/text_details_chapter_title"
+            app:layout_constraintBottom_toTopOf="@id/card_chess_board"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subtitle:"
+                    style="@style/chessmark_text_label"
+                    android:layout_marginRight="@dimen/card_view_text_margin_side"
+                    android:layout_marginLeft="@dimen/card_view_text_margin_side"
+                    android:layout_marginTop="@dimen/card_view_text_margin"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Why the center of the board is so important."
+                    android:layout_marginTop="@dimen/card_view_text_margin"
+                    android:layout_marginBottom="@dimen/card_view_text_margin"
+                    android:layout_marginLeft="@dimen/card_view_text_margin_side"
+                    android:layout_marginRight="@dimen/card_view_text_margin_side"
+                    />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_chess_board"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/card_view_margin_top"
+            android:layout_marginBottom="@dimen/card_view_margin_bottom"
+            android:layout_marginLeft="@dimen/card_view_margin"
+            android:layout_marginRight="@dimen/card_view_margin"
+            app:cardCornerRadius="@dimen/chessmark_corner_radius"
+            app:layout_constraintDimensionRatio="9:10"
+            app:layout_constraintTop_toBottomOf="@id/card_subtitle"
+            app:layout_constraintBottom_toTopOf="@id/card_white_plan"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Key Position:"
+                    style="@style/chessmark_text_label"
+                    android:layout_marginTop="@dimen/card_view_text_margin"
+                    android:layout_marginLeft="@dimen/card_view_text_margin_side"
+                    android:layout_marginRight="@dimen/card_view_text_margin_side"
+                    android:layout_marginBottom="0dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_chess_board_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/board_layout_margin"
+                    android:background="@drawable/ic_chessmarkboard">
+
+                    <!-- white pawns -->
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhitepawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.857" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhitepawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.143"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.857" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhitepawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.286"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.571" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhitepawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.429"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.571" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhitepawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.571"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.857" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhitepawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.714"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.857" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhitepawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.857"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.857" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhitepawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.857" />
+
+                    <!-- Black pawns -->
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackpawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.143" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackpawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.143"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.286" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackpawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.286"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.143" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackpawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.429"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.143" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackpawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.571"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.286" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackpawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.714"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.143" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackpawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.857"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.143" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackpawn"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.143" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_white_plan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_view_margin_top"
+            android:layout_marginBottom="@dimen/card_view_margin_bottom"
+            android:layout_marginLeft="@dimen/card_view_margin"
+            android:layout_marginRight="@dimen/card_view_margin"
+            app:cardCornerRadius="@dimen/chessmark_corner_radius"
+            app:layout_constraintTop_toBottomOf="@id/card_chess_board"
+            app:layout_constraintBottom_toTopOf="@id/card_black_plan"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="White's Plan:"
+                    style="@style/chessmark_text_label"
+                    android:layout_marginRight="@dimen/card_view_text_margin_side"
+                    android:layout_marginLeft="@dimen/card_view_text_margin_side"
+                    android:layout_marginTop="@dimen/card_view_text_margin"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Use the center as a position to attack from."
+                    android:layout_marginTop="@dimen/card_view_text_margin"
+                    android:layout_marginBottom="@dimen/card_view_text_margin"
+                    android:layout_marginLeft="@dimen/card_view_text_margin_side"
+                    android:layout_marginRight="@dimen/card_view_text_margin_side"
+                    />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_black_plan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_view_margin_top"
+            android:layout_marginBottom="@dimen/card_view_margin_bottom"
+            android:layout_marginLeft="@dimen/card_view_margin"
+            android:layout_marginRight="@dimen/card_view_margin"
+            app:cardCornerRadius="@dimen/chessmark_corner_radius"
+            app:layout_constraintTop_toBottomOf="@id/card_white_plan"
+            app:layout_constraintBottom_toTopOf="@id/card_notes"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Black's Plan:"
+                    style="@style/chessmark_text_label"
+                    android:layout_marginRight="@dimen/card_view_text_margin_side"
+                    android:layout_marginLeft="@dimen/card_view_text_margin_side"
+                    android:layout_marginTop="@dimen/card_view_text_margin"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Use White's center as a target to attack."
+                    android:layout_marginTop="@dimen/card_view_text_margin"
+                    android:layout_marginBottom="@dimen/card_view_text_margin"
+                    android:layout_marginLeft="@dimen/card_view_text_margin_side"
+                    android:layout_marginRight="@dimen/card_view_text_margin_side"
+                    />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_view_margin_top"
+            android:layout_marginBottom="@dimen/card_view_margin"
+            android:layout_marginLeft="@dimen/card_view_margin"
+            android:layout_marginRight="@dimen/card_view_margin"
+            app:cardCornerRadius="@dimen/chessmark_corner_radius"
+            app:layout_constraintTop_toBottomOf="@id/card_black_plan"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notes:"
+                    style="@style/chessmark_text_label"
+                    android:layout_marginRight="@dimen/card_view_text_margin_side"
+                    android:layout_marginLeft="@dimen/card_view_text_margin_side"
+                    android:layout_marginTop="@dimen/card_view_text_margin"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In most cases, control of the center of the board is the story of most chess games. Players either fight to occupy the center with pawns and pieces, or they arrange their forces to attack the center and destroy it."
+                    android:layout_marginTop="@dimen/card_view_text_margin"
+                    android:layout_marginBottom="@dimen/card_view_text_margin"
+                    android:layout_marginLeft="@dimen/card_view_text_margin_side"
+                    android:layout_marginRight="@dimen/card_view_text_margin_side"
+                    />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

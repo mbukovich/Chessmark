@@ -1,0 +1,9 @@
+<vector android:height="200dp" android:viewportHeight="400"
+    android:viewportWidth="400" android:width="200dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#e99d3a" android:name="Rectangle 2"
+        android:pathData="m50 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-350 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-250 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-350 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-250 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-350 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-250 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-350 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50z"
+        android:strokeColor="#e99d3a" android:strokeMiterLimit="100" android:strokeWidth="1"/>
+    <path android:fillColor="#ffedd1" android:name="Rectangle 1"
+        android:pathData="m0 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-250 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-350 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-250 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-350 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-250 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-350 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm-250 50v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50zm100 0v50h50v-50z"
+        android:strokeColor="#ffedd1" android:strokeMiterLimit="100" android:strokeWidth="1"/>
+</vector>
