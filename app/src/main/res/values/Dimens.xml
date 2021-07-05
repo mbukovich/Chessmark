@@ -15,4 +15,7 @@
     <dimen name="text_chapter_title_margin_bottom">0dp</dimen>
 
     <dimen name="board_layout_margin">15dp</dimen>
+
+    <!-- Dimensions for Board Editor -->
+    <dimen name="board_editor_square_percent">0.11</dimen>
 </resources>

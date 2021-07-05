@@ -216,6 +216,126 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.857" />
 
+                    <!-- White Rooks -->
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhiterook"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhiterook"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1" />
+
+                    <!-- White Knights -->
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhiteknight"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.286"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.714" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhiteknight"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.714"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.714" />
+
+                    <!-- White Bishops -->
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhitebishop"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.429"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.857" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhitebishop"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.714"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1" />
+
+                    <!-- White King and Queen -->
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhiteking"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.571"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkwhitequeen"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.429"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1" />
+
                     <!-- Black pawns -->
 
                     <ImageView
@@ -329,6 +449,126 @@
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.143" />
+
+                    <!-- Black Rooks -->
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackrook"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackrook"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+                    <!-- Black Knights -->
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackknight"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.143"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackknight"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.714"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.286" />
+
+                    <!-- Black Bishops -->
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackbishop"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.143"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.143" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackbishop"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.143"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.571" />
+
+                    <!-- Black King and Queen -->
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackking"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.571"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_chessmarkblackqueen"
+                        app:layout_constraintHeight_percent=".125"
+                        app:layout_constraintWidth_percent=".125"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.429"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>

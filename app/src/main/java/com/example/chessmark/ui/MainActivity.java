@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.chessmark.R;
 import com.example.chessmark.adapters.MasterDetailAdapter;
 import com.example.chessmark.viewmodels.MainViewModel;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private MasterDetailAdapter mViewPagerAdapter;
     private ViewPager2 mViewPager;
     private TabLayout mTabLayout;
+    private FloatingActionButton mFAB;
 
     private boolean mIsPortraitPhone;
 
@@ -32,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
         mIsPortraitPhone = true;
 
         mViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+
+        // Set up the Floating Action Button
+        mFAB = findViewById(R.id.floatingActionButton);
+        mFAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), BoardEditorActivity.class);
+                startActivity(intent);
+            }
+        });
 
         if (mIsPortraitPhone) {
             // Set up activity for portrait phone

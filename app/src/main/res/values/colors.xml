@@ -5,4 +5,5 @@
     <color name="colorAccent">#64C3FF</color>
     <color name="colorAccentSecondary">#A8D0E9</color>
     <color name="colorAltBackground">#FFEDD1</color>
+    <color name="colorChessmarkLightGray">#D1D1D1</color>
 </resources>
