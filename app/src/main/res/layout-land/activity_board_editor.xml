@@ -6,1044 +6,1043 @@
     android:layout_height="match_parent"
     tools:context=".ui.BoardEditorActivity">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_board_editor"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title=" Board Editor"
+            app:logo="@drawable/ic_chessmarklogo"
+            app:menu="@menu/app_bar_menu"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            app:layout_scrollFlags="scroll" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Chess Board Squares -->
+
+    <!-- Rank 8 -->
+    <ImageView
+        android:id="@+id/image_view_chessboard_a8"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/top_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:title=" Board Editor"
-                app:logo="@drawable/ic_chessmarklogo"
-                app:menu="@menu/app_bar_menu"
-                style="@style/Widget.MaterialComponents.Toolbar.Primary"
-                app:layout_scrollFlags="scroll" />
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint_layout_board_editor"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <!-- Chess Board Squares -->
-
-            <!-- Rank 8 -->
-            <ImageView
-                android:id="@+id/image_view_chessboard_a8"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintVertical_bias="0.3"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b8"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_a7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_b8"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintVertical_bias="0.3"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a8"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c8"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_b7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_c8"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintVertical_bias="0.3"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b8"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d8"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_c7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_d8"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintVertical_bias="0.3"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c8"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e8"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_d7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_e8"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                android:src="@drawable/ic_chessmarkblackking"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintVertical_bias="0.3"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d8"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f8"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_e7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_f8"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintVertical_bias="0.3"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e8"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g8"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_f7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_g8"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintVertical_bias="0.3"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f8"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h8"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_g7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_h8"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintVertical_bias="0.3"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g8"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_h7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <!-- Rank 7 -->
-            <ImageView
-                android:id="@+id/image_view_chessboard_a7"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_a8"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_a6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b7"
-                app:layout_constraintLeft_toLeftOf="parent"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_b7"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_b8"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_b6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c7"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_c7"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_c8"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_c6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d7"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_d7"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_d8"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_d6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e7"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_e7"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_e8"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_e6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f7"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_f7"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_f8"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_f6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g7"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_g7"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_g8"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_g6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h7"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_h7"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_h8"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_h6"
-                app:layout_constraintRight_toRightOf="parent"/>
-
-            <!-- Rank 6 -->
-            <ImageView
-                android:id="@+id/image_view_chessboard_a6"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_a7"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b6"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_a5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_b6"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c6"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_b5"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_b7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_c6"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d6"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_c5"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_c7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_d6"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e6"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_d5"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_d7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_e6"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f6"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_e5"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_e7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_f6"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g6"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_f5"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_f7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_g6"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f6"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h6"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_g5"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_g7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_h6"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g6"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_h5"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_h7"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <!-- Rank 5 -->
-            <ImageView
-                android:id="@+id/image_view_chessboard_a5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_a6"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_a4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b5"
-                app:layout_constraintLeft_toLeftOf="parent"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_b5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_b6"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_b4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c5"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_c5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_c6"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_c4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d5"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_d5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_d6"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_d4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e5"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_e5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_e6"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_e4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f5"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_f5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_f6"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_f4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g5"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_g5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_g6"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_g4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h5"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_h5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_h6"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_h4"
-                app:layout_constraintRight_toRightOf="parent"/>
-
-            <!-- Rank 4 -->
-            <ImageView
-                android:id="@+id/image_view_chessboard_a4"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_a5"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b4"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_a3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_b4"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c4"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_b3"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_b5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_c4"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d4"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_c3"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_c5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_d4"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e4"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_d3"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_d5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_e4"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f4"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_e3"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_e5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_f4"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g4"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_f3"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_f5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_g4"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f4"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h4"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_g3"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_g5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_h4"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g4"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_h3"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_h5"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <!-- Rank 3 -->
-            <ImageView
-                android:id="@+id/image_view_chessboard_a3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_a4"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_a2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b3"
-                app:layout_constraintLeft_toLeftOf="parent"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_b3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_b4"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_b2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c3"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_c3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                android:src="@drawable/ic_chessmarkwhiteknight"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_c4"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_c2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d3"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_d3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_d4"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_d2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e3"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_e3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_e4"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_e2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f3"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_f3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_f4"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_f2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g3"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_g3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_g4"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_g2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h3"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_h3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_h4"
-                app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_h2"
-                app:layout_constraintRight_toRightOf="parent"/>
-
-            <!-- Rank 2 -->
-            <ImageView
-                android:id="@+id/image_view_chessboard_a2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_a3"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b2"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_a1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_b2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c2"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_b1"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_b3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_c2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d2"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_c1"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_c3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_d2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e2"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_d1"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_d3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_e2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f2"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_e1"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_e3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_f2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g2"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_f1"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_f3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_g2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h2"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_g1"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_g3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_h2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g2"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_h1"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_h3"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent" />
-
-            <!-- Rank 1 -->
-            <ImageView
-                android:id="@+id/image_view_chessboard_a1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_a2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b1"
-                app:layout_constraintLeft_toLeftOf="parent"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_b1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_b2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c1"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_c1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_c2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d1"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_d1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_d2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e1"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_e1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                android:src="@drawable/ic_chessmarkwhiteking"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_e2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f1"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_f1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_f2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g1"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_g1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorPrimary"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_g2"
-                app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h1"/>
-
-            <ImageView
-                android:id="@+id/image_view_chessboard_h1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAltBackground"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g1"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_h2"
-                app:layout_constraintRight_toRightOf="parent"/>
-
-
-            <!-- Editor Palette -->
-
-            <TextView
-                android:id="@+id/txt_palette"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Select option in palette and apply to board:"
-                android:textSize="16sp"
-                android:layout_margin="10dp"
-                app:layout_constraintVertical_bias="0.6"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintBottom_toTopOf="@id/editor_divider"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_a1"/>
-
-            <!-- Divider -->
-            <FrameLayout
-                android:id="@+id/editor_divider"
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="@color/colorChessmarkLightGray"
-                app:layout_constraintBottom_toTopOf="@id/img_palette_white_pawn"
-                app:layout_constraintTop_toBottomOf="@id/txt_palette"/>
-
-            <!-- Delete Image -->
-            <ImageView
-                android:id="@+id/img_palette_delete"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_delete_outline"
-                app:layout_constraintTop_toBottomOf="@id/editor_divider"
-                app:layout_constraintBottom_toTopOf="@id/img_palette_black_king"
-                app:layout_constraintLeft_toRightOf="@id/img_palette_white_king"/>
-
-            <!-- White Pieces -->
-            <ImageView
-                android:id="@+id/img_palette_white_pawn"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkwhitepawn"
-                app:layout_constraintTop_toBottomOf="@id/editor_divider"
-                app:layout_constraintBottom_toTopOf="@id/img_palette_black_pawn"
-                app:layout_constraintLeft_toLeftOf="parent"/>
-
-            <ImageView
-                android:id="@+id/img_palette_white_knight"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:background="@drawable/piece_outline_square"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkwhiteknight"
-                app:layout_constraintTop_toBottomOf="@id/editor_divider"
-                app:layout_constraintBottom_toTopOf="@id/img_palette_black_knight"
-                app:layout_constraintLeft_toRightOf="@id/img_palette_white_pawn"/>
-
-            <ImageView
-                android:id="@+id/img_palette_white_bishop"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkwhitebishop"
-                app:layout_constraintTop_toBottomOf="@id/editor_divider"
-                app:layout_constraintBottom_toTopOf="@id/img_palette_black_bishop"
-                app:layout_constraintLeft_toRightOf="@id/img_palette_white_knight"/>
-
-            <ImageView
-                android:id="@+id/img_palette_white_rook"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkwhiterook"
-                app:layout_constraintTop_toBottomOf="@id/editor_divider"
-                app:layout_constraintBottom_toTopOf="@id/img_palette_black_rook"
-                app:layout_constraintLeft_toRightOf="@id/img_palette_white_bishop"/>
-
-            <ImageView
-                android:id="@+id/img_palette_white_queen"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkwhitequeen"
-                app:layout_constraintTop_toBottomOf="@id/editor_divider"
-                app:layout_constraintBottom_toTopOf="@id/img_palette_black_queen"
-                app:layout_constraintLeft_toRightOf="@id/img_palette_white_rook"/>
-
-            <ImageView
-                android:id="@+id/img_palette_white_king"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkwhiteking"
-                app:layout_constraintTop_toBottomOf="@id/editor_divider"
-                app:layout_constraintBottom_toTopOf="@id/img_palette_black_king"
-                app:layout_constraintLeft_toRightOf="@id/img_palette_white_queen"/>
-
-            <!-- Black Pieces -->
-            <ImageView
-                android:id="@+id/img_palette_black_pawn"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkblackpawn"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_palette_white_pawn"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-            <ImageView
-                android:id="@+id/img_palette_black_knight"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkblackknight"
-                app:layout_constraintLeft_toRightOf="@id/img_palette_black_pawn"
-                app:layout_constraintTop_toBottomOf="@id/img_palette_white_knight"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-            <ImageView
-                android:id="@+id/img_palette_black_bishop"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkblackbishop"
-                app:layout_constraintLeft_toRightOf="@id/img_palette_black_knight"
-                app:layout_constraintTop_toBottomOf="@id/img_palette_white_bishop"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-            <ImageView
-                android:id="@+id/img_palette_black_rook"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkblackrook"
-                app:layout_constraintLeft_toRightOf="@id/img_palette_black_bishop"
-                app:layout_constraintTop_toBottomOf="@id/img_palette_white_rook"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-            <ImageView
-                android:id="@+id/img_palette_black_queen"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkblackqueen"
-                app:layout_constraintLeft_toRightOf="@id/img_palette_black_rook"
-                app:layout_constraintTop_toBottomOf="@id/img_palette_white_queen"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-            <ImageView
-                android:id="@+id/img_palette_black_king"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="@dimen/board_editor_square_percent"
-                android:padding="5dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/ic_chessmarkblackking"
-                app:layout_constraintLeft_toRightOf="@id/img_palette_black_queen"
-                app:layout_constraintTop_toBottomOf="@id/img_palette_white_king"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButtonBoardEditor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:layout_margin="16dp"
-            android:clickable="true"
-            style="@style/Widget.MaterialComponents.FloatingActionButton"
-            app:backgroundTint="@color/colorAccent"
-            app:tint="#FFFFFF"
-            android:src="@drawable/ic_floating_action_save" />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        android:background="@color/colorAltBackground"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintVertical_bias="@dimen/board_editor_vertical_bias_landscape"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_board_editor"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b8"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_a7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_b8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintVertical_bias="@dimen/board_editor_vertical_bias_landscape"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_board_editor"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a8"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c8"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_b7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_c8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintVertical_bias="@dimen/board_editor_vertical_bias_landscape"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_board_editor"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b8"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d8"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_c7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_d8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintVertical_bias="@dimen/board_editor_vertical_bias_landscape"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_board_editor"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c8"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e8"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_d7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_e8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        android:src="@drawable/ic_chessmarkblackking"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintVertical_bias="@dimen/board_editor_vertical_bias_landscape"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_board_editor"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d8"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f8"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_e7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_f8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintVertical_bias="@dimen/board_editor_vertical_bias_landscape"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_board_editor"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e8"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g8"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_f7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_g8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintVertical_bias="@dimen/board_editor_vertical_bias_landscape"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_board_editor"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f8"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h8"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_g7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_h8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintVertical_bias="@dimen/board_editor_vertical_bias_landscape"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_board_editor"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g8"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_h7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <!-- Rank 7 -->
+    <ImageView
+        android:id="@+id/image_view_chessboard_a7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_a8"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_a6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b7"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_b7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_b8"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_b6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c7"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_c7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_c8"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_c6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d7"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_d7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_d8"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_d6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e7"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_e7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_e8"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_e6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f7"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_f7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_f8"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_f6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g7"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_g7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_g8"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_g6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h7"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_h7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_h8"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_h6"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Rank 6 -->
+    <ImageView
+        android:id="@+id/image_view_chessboard_a6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_a7"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b6"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_a5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_b6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c6"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_b5"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_b7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_c6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d6"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_c5"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_c7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_d6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e6"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_d5"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_d7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_e6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f6"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_e5"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_e7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_f6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g6"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_f5"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_f7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_g6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f6"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h6"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_g5"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_g7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_h6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_h5"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_h7"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <!-- Rank 5 -->
+    <ImageView
+        android:id="@+id/image_view_chessboard_a5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_a6"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_a4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b5"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_b5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_b6"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_b4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c5"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_c5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_c6"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_c4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d5"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_d5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_d6"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_d4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e5"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_e5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_e6"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_e4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f5"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_f5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_f6"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_f4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g5"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_g5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_g6"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_g4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h5"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_h5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_h6"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_h4"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Rank 4 -->
+    <ImageView
+        android:id="@+id/image_view_chessboard_a4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_a5"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b4"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_a3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_b4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c4"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_b3"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_b5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_c4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d4"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_c3"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_c5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_d4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e4"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_d3"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_d5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_e4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f4"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_e3"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_e5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_f4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g4"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_f3"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_f5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_g4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f4"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h4"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_g3"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_g5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_h4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_h3"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_h5"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <!-- Rank 3 -->
+    <ImageView
+        android:id="@+id/image_view_chessboard_a3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_a4"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_a2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b3"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_b3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_b4"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_b2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c3"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_c3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_chessmarkwhiteknight"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_c4"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_c2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d3"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_d3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_d4"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_d2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e3"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_e3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_e4"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_e2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f3"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_f3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_f4"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_f2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g3"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_g3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_g4"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_g2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h3"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_h3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_h4"
+        app:layout_constraintBottom_toTopOf="@id/image_view_chessboard_h2"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Rank 2 -->
+    <ImageView
+        android:id="@+id/image_view_chessboard_a2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_a3"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b2"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_a1"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_b2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c2"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_b1"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_b3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_c2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d2"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_c1"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_c3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_d2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e2"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_d1"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_d3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_e2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f2"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_e1"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_e3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_f2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g2"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_f1"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_f3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_g2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h2"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_g1"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_g3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_h2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_chessboard_h1"
+        app:layout_constraintTop_toBottomOf="@id/image_view_chessboard_h3"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape" />
+
+    <!-- Rank 1 -->
+    <ImageView
+        android:id="@+id/image_view_chessboard_a1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_a2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_b1"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_b1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_a1"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_b2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_c1"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_c1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_b1"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_c2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_d1"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_d1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_c1"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_d2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_e1"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_e1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_chessmarkwhiteking"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_d1"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_e2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_f1"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_f1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_e1"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_f2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_g1"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_g1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_f1"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_g2"
+        app:layout_constraintRight_toLeftOf="@+id/image_view_chessboard_h1"/>
+
+    <ImageView
+        android:id="@+id/image_view_chessboard_h1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAltBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image_view_chessboard_g1"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_chessboard_h2"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <!-- Editor Palette -->
+
+    <TextView
+        android:id="@+id/txt_palette"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select option in palette and apply to board:"
+        android:textSize="16sp"
+        android:layout_margin="10dp"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"
+        app:layout_constraintLeft_toRightOf="@id/editor_divider"
+        app:layout_constraintTop_toBottomOf="@id/appbar_board_editor"/>
+
+    <!-- Divider -->
+    <FrameLayout
+        android:id="@+id/editor_divider"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:background="@color/colorChessmarkLightGray"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"
+        app:layout_constraintTop_toBottomOf="@id/appbar_board_editor"
+        app:layout_constraintLeft_toLeftOf="@id/adViewBoardEditor"/>
+
+    <!-- Delete Image -->
+    <ImageView
+        android:id="@+id/img_palette_delete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintVertical_bias="0.1"
+        android:src="@drawable/ic_delete_outline"
+        app:layout_constraintTop_toBottomOf="@id/txt_palette"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"
+        app:layout_constraintLeft_toRightOf="@id/img_palette_white_king"/>
+
+    <!-- White Pieces -->
+    <ImageView
+        android:id="@+id/img_palette_white_pawn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.1"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkwhitepawn"
+        app:layout_constraintTop_toBottomOf="@id/txt_palette"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"
+        app:layout_constraintLeft_toRightOf="@id/editor_divider"/>
+
+    <ImageView
+        android:id="@+id/img_palette_white_knight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.1"
+        android:background="@drawable/piece_outline_square"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkwhiteknight"
+        app:layout_constraintTop_toBottomOf="@id/txt_palette"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"
+        app:layout_constraintLeft_toRightOf="@id/img_palette_white_pawn"/>
+
+    <ImageView
+        android:id="@+id/img_palette_white_bishop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.1"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkwhitebishop"
+        app:layout_constraintTop_toBottomOf="@id/txt_palette"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"
+        app:layout_constraintLeft_toRightOf="@id/img_palette_white_knight"/>
+
+    <ImageView
+        android:id="@+id/img_palette_white_rook"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.1"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkwhiterook"
+        app:layout_constraintTop_toBottomOf="@id/txt_palette"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"
+        app:layout_constraintLeft_toRightOf="@id/img_palette_white_bishop"/>
+
+    <ImageView
+        android:id="@+id/img_palette_white_queen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.1"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkwhitequeen"
+        app:layout_constraintTop_toBottomOf="@id/txt_palette"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"
+        app:layout_constraintLeft_toRightOf="@id/img_palette_white_rook"/>
+
+    <ImageView
+        android:id="@+id/img_palette_white_king"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.1"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkwhiteking"
+        app:layout_constraintTop_toBottomOf="@id/txt_palette"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"
+        app:layout_constraintLeft_toRightOf="@id/img_palette_white_queen"/>
+
+    <!-- Black Pieces -->
+    <ImageView
+        android:id="@+id/img_palette_black_pawn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.2"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkblackpawn"
+        app:layout_constraintLeft_toRightOf="@id/editor_divider"
+        app:layout_constraintTop_toBottomOf="@id/img_palette_white_pawn"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"/>
+
+    <ImageView
+        android:id="@+id/img_palette_black_knight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.2"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkblackknight"
+        app:layout_constraintLeft_toRightOf="@id/img_palette_black_pawn"
+        app:layout_constraintTop_toBottomOf="@id/img_palette_white_knight"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"/>
+
+    <ImageView
+        android:id="@+id/img_palette_black_bishop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.2"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkblackbishop"
+        app:layout_constraintLeft_toRightOf="@id/img_palette_black_knight"
+        app:layout_constraintTop_toBottomOf="@id/img_palette_white_bishop"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"/>
+
+    <ImageView
+        android:id="@+id/img_palette_black_rook"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.2"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkblackrook"
+        app:layout_constraintLeft_toRightOf="@id/img_palette_black_bishop"
+        app:layout_constraintTop_toBottomOf="@id/img_palette_white_rook"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"/>
+
+    <ImageView
+        android:id="@+id/img_palette_black_queen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.2"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkblackqueen"
+        app:layout_constraintLeft_toRightOf="@id/img_palette_black_rook"
+        app:layout_constraintTop_toBottomOf="@id/img_palette_white_queen"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"/>
+
+    <ImageView
+        android:id="@+id/img_palette_black_king"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="@dimen/board_editor_square_percent_landscape"
+        app:layout_constraintVertical_bias="0.2"
+        android:padding="5dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_chessmarkblackking"
+        app:layout_constraintLeft_toRightOf="@id/img_palette_black_queen"
+        app:layout_constraintTop_toBottomOf="@id/img_palette_white_king"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"/>
 
     <FrameLayout
         android:id="@+id/adViewBoardEditor"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="50dp"
+        app:layout_constraintLeft_toRightOf="@id/image_view_chessboard_h1"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="20dp"
         android:background="#D1D1D1">
 
         <TextView
@@ -1053,5 +1052,21 @@
             android:text="This is a placeholder for future ads"/>
 
     </FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonBoardEditor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
+        app:backgroundTint="@color/colorAccent"
+        app:tint="#FFFFFF"
+        android:src="@drawable/ic_floating_action_save"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adViewBoardEditor"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
