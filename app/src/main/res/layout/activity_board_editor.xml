@@ -848,7 +848,7 @@
                 android:text="Select option in palette and apply to board:"
                 android:textSize="16sp"
                 android:layout_margin="10dp"
-                app:layout_constraintVertical_bias="0.6"
+                app:layout_constraintVertical_bias="0.1"
                 app:layout_constraintVertical_chainStyle="packed"
                 app:layout_constraintBottom_toTopOf="@id/editor_divider"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -860,7 +860,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:background="@color/colorChessmarkLightGray"
-                app:layout_constraintBottom_toTopOf="@id/img_palette_white_pawn"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txt_palette"/>
 
             <!-- Delete Image -->
